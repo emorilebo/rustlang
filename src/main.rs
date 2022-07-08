@@ -14,7 +14,7 @@ fn divide(dividend: i32, divisor: i32)-> Result<i32, MyError>{
     }
 }
 fn main() {
-    let divide = divide(4, 2);
+    let divide = divide(4, 3);
     //let res = divide2.expect("we crashed")
 
     // match divide{
@@ -24,5 +24,6 @@ fn main() {
     // if divide.is_ok(){
     //     println!("{}", divide.unwrap());
     // }
-    println!("{}", divide.unwrap());
+    //println!("{}", divide.unwrap());
+    println!("{}", divide.unwrap_or(100));
 }
