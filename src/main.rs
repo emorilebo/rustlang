@@ -1,18 +1,24 @@
 
+#[derive(Debug)]
+enum MyError{
+    Error1
+}
 
-//None, to indicate failure or lack of value, and
-//Some(value), a tuple struct that wraps a value with type T
-fn divide(dividend: i32, divisor: i32)-> Option<i32>{
+//Err, an enum that contains an error code
+//Ok(value), a wrapper that contains a value
+fn divide(dividend: i32, divisor: i32)-> Result<i32, MyError>{
     if dividend % divisor != 0{
-        None
+        Err(MyError::Error1)
     }else{
-        Some(dividend/divisor)
+        Ok(dividend/divisor)
     }
 }
 fn main() {
-    let divide1 = divide(4, 2);
-    let divide2 = divide(2, 3);
+    let divide = divide(4, 2);
+    //let res = divide2.expect("we crashed")
 
-    println!("{:?} unwraps to {}", divide1, divide1.unwrap());
-    println!("{:?}", divide1);
+    match divide{
+        Ok(v) => println!("{}", v),
+        Err(v) => println!("{:?}", v)
+    }
 }
