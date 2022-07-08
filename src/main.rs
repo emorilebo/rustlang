@@ -21,7 +21,8 @@ fn main() {
     //     Ok(v) => println!("{}", v),
     //     Err(v) => println!("{:?}", v)
     // }
-    if divide.is_ok(){
-        println!("{}", divide.unwrap());
-    }
+    // if divide.is_ok(){
+    //     println!("{}", divide.unwrap());
+    // }
+    println!("{}", divide.unwrap());
 }
