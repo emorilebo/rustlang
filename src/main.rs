@@ -17,8 +17,11 @@ fn main() {
     let divide = divide(4, 2);
     //let res = divide2.expect("we crashed")
 
-    match divide{
-        Ok(v) => println!("{}", v),
-        Err(v) => println!("{:?}", v)
+    // match divide{
+    //     Ok(v) => println!("{}", v),
+    //     Err(v) => println!("{:?}", v)
+    // }
+    if divide.is_ok(){
+        println!("{}", divide.unwrap());
     }
 }
